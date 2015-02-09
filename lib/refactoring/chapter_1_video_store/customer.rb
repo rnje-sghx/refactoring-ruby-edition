@@ -28,8 +28,6 @@ class Refactoring::Chapter1VideoStore::Customer
   private
 
   def total_charge
-    @rentals.inject do |rental, total|
-      total += rental.charge
-    end
+    @rentals.inject(0) { |rental, total| total + rental.charge }
   end
 end
