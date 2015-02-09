@@ -1,4 +1,4 @@
-class Movie
+class Refactoring::Chapter1VideoStore::Movie
   REGULAR     = 0
   NEW_RELEASE = 1
   CHILDRENS   = 2
