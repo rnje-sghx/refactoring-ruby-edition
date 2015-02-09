@@ -1,7 +1,7 @@
 class Refactoring::Chapter1VideoStore::Movie
-  REGULAR     = 0
+  REGULAR = 0
   NEW_RELEASE = 1
-  CHILDRENS   = 2
+  CHILDRENS = 2
 
   attr_reader :title
   attr_accessor :price_code
