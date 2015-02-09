@@ -11,7 +11,6 @@ class Refactoring::Chapter1VideoStore::Customer
   end
 
   def statement
-    frequent_renter_points = 0
     result = "Rental Record for #{@name}\n"
     @rentals.each do |element|
       # show figures for this rental
@@ -23,11 +22,23 @@ class Refactoring::Chapter1VideoStore::Customer
     result
   end
 
-  def total_frequent_renter_points
-    @rentals.inject(0) { |rental, total| total + rental.frequent_renter_points }
+  def html_statement
+    result = "<h1>Rentals for <em>#{@name}</em></h1><p>\n"
+    @rentals.each do |element|
+      result += "\t" + each.movie.title + ": " + element.charge.to_s + "<br>\n"
+    end
+    result += "<p>You owe <em>#{total_charge}</em><p>\n"
+    result += "On this rental you earned " +
+        "<em>#{total_frequent_renter_points}</em> " +
+        "frequent renter points<p>"
+    result
   end
 
   private
+
+  def total_frequent_renter_points
+    @rentals.inject(0) { |rental, total| total + rental.frequent_renter_points }
+  end
 
   def total_charge
     @rentals.inject(0) { |rental, total| total + rental.charge }
