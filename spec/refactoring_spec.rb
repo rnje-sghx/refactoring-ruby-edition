@@ -1,2 +1,0 @@
-describe Refactoring do; end
-
