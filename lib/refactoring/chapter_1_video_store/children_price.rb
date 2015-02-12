@@ -1,4 +1,4 @@
-class Refactoring::Chapter1VideoStore::Children
+class Refactoring::Chapter1VideoStore::ChildrenPrice
   include Refactoring::Chapter1VideoStore::Price
 
   def charge(days_rented)
