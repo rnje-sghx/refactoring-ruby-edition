@@ -1,1 +1,3 @@
 module Refactoring::Chapter4UnitTestingFramework; end
+
+require_relative 'chapter_4_unit_testing_framework/file_reader'
