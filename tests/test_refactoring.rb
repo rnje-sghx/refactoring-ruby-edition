@@ -1,3 +1,5 @@
 require 'tests_helper'
 
-class TestRefactoring < Test::Unit::TestCase; end
+module TestRefactoring; end
+
+require_relative 'refactoring/test_chapter_4_unit_testing_framework'
