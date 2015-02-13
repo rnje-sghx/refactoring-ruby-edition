@@ -1,4 +1,4 @@
-class PizzaBoy
+class Refactoring::Chapter6ComposingMethods::PizzaBoy
   def initialize()
     @number_of_late_deliveries = 0
   end
