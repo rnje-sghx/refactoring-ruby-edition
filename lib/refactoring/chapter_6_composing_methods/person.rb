@@ -10,6 +10,10 @@ class Refactoring::Chapter6ComposingMethods::Person
     @orders.each do |order|
       outstanding += order.amount
     end
+    print_details(outstanding)
+  end
+
+  def print_details(outstanding)
     # print details
     puts "name: #{@name}"
     puts "amount: #{outstanding}"
