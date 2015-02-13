@@ -5,12 +5,13 @@ class Refactoring::Chapter6ComposingMethods::Person
   end
 
   def print_owing(previous_amount)
-    outstanding = previous_amount * 1.2
     print_banner
-    @orders.each do |order|
-      outstanding += order.amount
-    end
+    outstanding = calculate_outstanding(previous_amount * 1.2)
     print_details(outstanding)
+  end
+
+  def calculate_outstanding(outstanding)
+    @orders.inject(outstanding) { |outstanding, order| outstanding + order.amount }
   end
 
   def print_details(outstanding)
