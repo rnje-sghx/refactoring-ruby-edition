@@ -3,17 +3,18 @@ class Refactoring::Chapter6ComposingMethods::Person
     @name = name
   end
 
-  def print_owing(amount)
-    print_banner
-    print_details(amount)
-  end
-
-  def print_details(amount)
-    puts "name:   #{@name}"
-    puts "amount: #{amount}"
-  end
-
-  def print_banner
-    puts '*******************'
+  def print_owing
+    outstanding = 0.0
+    # print banner
+    puts "*************************"
+    puts "***** Customer Owes *****"
+    puts "*************************"
+    # calculate outstanding
+    @orders.each do |order|
+      outstanding += order.amount
+    end
+    # print details
+    puts "name: #{@name}"
+    puts "amount: #{outstanding}"
   end
 end
