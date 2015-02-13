@@ -10,7 +10,7 @@ class Refactoring::Chapter6ComposingMethods::Person
   end
 
   def calculate_outstanding
-    @orders.inject(0.0) { |order, outstanding| outstanding + order.amount }
+    @orders.inject(0.0) { |outstanding, order| outstanding + order.amount }
   end
 
   def print_details(outstanding)
