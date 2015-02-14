@@ -4,12 +4,13 @@ class Refactoring::Chapter6ComposingMethods::Item
     @price    = price
   end
 
-  def trade_price
-    if (base_price > 1000)
-      base_price * 0.95
-    else
-      base_price * 0.98
-    end
+  def price
+    a_discount_factor = discount_factor
+    base_price * a_discount_factor
+  end
+
+  def discount_factor
+    (base_price > 1000) ? 0.95 : 0.98
   end
 
   def base_price
