@@ -5,8 +5,7 @@ class Refactoring::Chapter6ComposingMethods::Item
   end
 
   def price
-    a_discount_factor = discount_factor
-    base_price * a_discount_factor
+    base_price * discount_factor
   end
 
   def discount_factor
