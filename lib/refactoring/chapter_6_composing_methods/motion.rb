@@ -1,4 +1,4 @@
-class Motion
+class Refactoring::Chapter6ComposingMethods::Motion
   def initialize(primary_force = 0, secondary_force = 0, delay = 0, mass = 0)
     @primary_force   = primary_force
     @secondary_force = secondary_force

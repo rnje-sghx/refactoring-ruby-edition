@@ -1,4 +1,4 @@
-class Select
+class Refactoring::Chapter6ComposingMethods::Select
   attr_reader :options
 
   def self.with_option(option)

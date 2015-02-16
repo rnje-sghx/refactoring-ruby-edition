@@ -1,3 +1,8 @@
 module Refactoring::Chapter6ComposingMethods; end
 
+require_relative 'chapter_6_composing_methods/account'
+require_relative 'chapter_6_composing_methods/item'
+require_relative 'chapter_6_composing_methods/motion'
 require_relative 'chapter_6_composing_methods/person'
+require_relative 'chapter_6_composing_methods/pizza_boy'
+require_relative 'chapter_6_composing_methods/select'

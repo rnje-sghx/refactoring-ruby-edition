@@ -1,4 +1,4 @@
-class Account
+class Refactoring::Chapter6ComposingMethods::Account
   def gamma(input_val, quantity, year_to_date)
     important_value1 = (input_val * quantity) + delta
     important_value2 = (input_val * year_to_date) + 100
