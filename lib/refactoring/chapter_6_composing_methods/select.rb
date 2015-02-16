@@ -31,7 +31,10 @@ class Select
   end
 
   def render
-    if (platform.upcase.index('MAC') && browser.upcase.index('IE') && initialized? && resize > 0)
+    is_mac_os     = platform.upcase.index('MAC')
+    is_ie_browser = browser.upcase.index('IE')
+    was_resized   = resize > 0
+    if (is_mac_os && is_ie_browser && initialized? && was_resized)
       # renders
     end
   end
