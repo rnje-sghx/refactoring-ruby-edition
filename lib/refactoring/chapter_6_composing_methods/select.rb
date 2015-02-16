@@ -11,5 +11,6 @@ class Select
 
   def add_option(option)
     @options << option
+    self
   end
 end
