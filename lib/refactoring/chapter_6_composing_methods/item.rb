@@ -9,10 +9,15 @@ class Refactoring::Chapter6ComposingMethods::Item
   end
 
   def market_price
-    # market price is base price - quantity discount + shipping
-    quantity_discount = [0, @quantity - 500].max * @price * 0.05
-    shipping          = [base_price * 0.1, 100.0].min
     base_price - quantity_discount + shipping
+  end
+
+  def shipping
+    [base_price * 0.1, 100.0].min
+  end
+
+  def quantity_discount
+    [0, @quantity - 500].max * @price * 0.05
   end
 
   def discount_factor
