@@ -9,7 +9,7 @@ class Select
     @options = options
   end
 
-  def add_option(option)
+  def and(option)
     @options << option
     self
   end
