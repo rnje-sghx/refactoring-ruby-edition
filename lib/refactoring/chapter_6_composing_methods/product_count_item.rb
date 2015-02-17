@@ -1,4 +1,4 @@
-class ProductCountItem
+class Refactoring::Chapter6ComposingMethods::ProductCountItem
   def self.find_all_by_criteria(criteria)
     []
   end
