@@ -1,11 +1,11 @@
 class Refactoring::Chapter6ComposingMethods::Post
-  def error
-    self.state = :error
+  def self.states(*states)
+    states.each do |state|
+      define_method state do
+        self.state = state
+      end
+    end
   end
-  def failure
-    self.state = :failure
-  end
-  def success
-    self.state = :success
-  end
+
+  states :error, :failure, :success
 end
