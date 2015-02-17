@@ -6,7 +6,7 @@ class Book
     sql               = ['SELECT * FROM books']
     hash[:joins].each do |join_table|
       sql << "LEFT OUTER JOIN #{join_table} ON"
-      sql << "books.#{join_table.to_s.chap}_id"
+      sql << "books.#{join_table.to_s.chop}_id"
       sql << " = #{join_table}.id"
     end
     sql << "WHERE #{hash[:conditions]}" unless hash[:conditions].empty?
