@@ -1,6 +1,6 @@
 class Book
-  def self.find(selector, hash = {})
-    hash.assert_valid_keys :conditions, :joins
+  def self.find( hash = {})
+    hash.assert_valid_keys :conditions, :joins, :selector
     hash[:conditions] ||= ''
     hash[:joins]      ||= []
     sql               = ['SELECT * FROM books']
@@ -10,7 +10,7 @@ class Book
       sql << " = #{join_table}.id"
     end
     sql << "WHERE #{hash[:conditions]}" unless hash[:conditions].empty?
-    sql << 'LIMIT 1' if selector == :first
+    sql << 'LIMIT 1' if hash[:selector] == :first
     connection.find(sql.join(' '))
   end
 end
