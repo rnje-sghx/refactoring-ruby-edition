@@ -1,5 +1,6 @@
 class Book
   def self.find(selector, hash = {})
+    hash.assert_valid_keys :conditions, :joins
     hash[:conditions] ||= ''
     hash[:joins]      ||= []
     sql               = ['SELECT * FROM books']
