@@ -1,4 +1,4 @@
-class Refactoring::Chapter6ComposingMethods::Person
+class Refactoring::Chapter6ComposingMethods::Order
   def initialize(name, orders = [])
     @name   = name
     @orders = orders
