@@ -1,13 +1,11 @@
 class Refactoring::Chapter6ComposingMethods::PostData
   def initialize(post_data)
-    @post_data = post_data
-  end
-
-  def params
-    @post_data[:params]
-  end
-
-  def session
-    @post_data[:session]
+    (class << self; self; end).class_eval do
+      post_data.each_pair do |key, value|
+        define_method key.to_sym do
+          value
+        end
+      end
+    end
   end
 end
