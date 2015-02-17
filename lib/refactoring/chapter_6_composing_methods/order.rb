@@ -11,7 +11,7 @@ class Refactoring::Chapter6ComposingMethods::Order
   end
 
   def calculate_outstanding(outstanding)
-    @orders.inject(outstanding) { |outstanding, order| outstanding + order.amount }
+    @orders.inject(outstanding) { |outstanding_amount, order| outstanding_amount + order.amount }
   end
 
   def print_details(outstanding)
@@ -20,8 +20,8 @@ class Refactoring::Chapter6ComposingMethods::Order
   end
 
   def print_banner
-    puts "*************************"
-    puts "***** Customer Owes *****"
-    puts "*************************"
+    puts '*************************'
+    puts '***** Customer Owes *****'
+    puts '*************************'
   end
 end

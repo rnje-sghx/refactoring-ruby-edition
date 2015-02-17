@@ -1,4 +1,4 @@
-class Person
+class Refactoring::Chapter6ComposingMethods::Person
   def self.attrs_with_empty_predicate(*args)
     attr_accessor *args
     args.each do |attribute|
