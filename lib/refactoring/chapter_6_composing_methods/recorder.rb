@@ -24,3 +24,8 @@ class Refactoring::Chapter6ComposingMethods::Recorder
     end.join('.')
   end
 end
+
+# recorder = Recorder.new
+# recorder.start("LRMMMMRL")
+# recorder.stop("LRMMMMRL")
+# recorder.play_for(CommandCenter.new)
