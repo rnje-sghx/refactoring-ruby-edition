@@ -8,5 +8,16 @@ class Refactoring::Chapter6ComposingMethods::Person
     end
   end
 
+  def self.attr_with_default(options)
+    options.each_pair do |attribute, default_value|
+      define_method attribute do
+        eval "@#{attribute} ||= #{default_value}"
+      end
+    end
+  end
+
   attrs_with_empty_predicate :name, :age
+
+  attr_with_default :emails          => '[]',
+                    :employee_number => 'EmployeeNumberGenerator.next'
 end
