@@ -3,10 +3,8 @@ module Refactoring
     class Person
       extend Forwardable
 
-      attr_reader :name
+      attr_reader :name, :department
       attr_accessor :office_area_code, :office_number
-
-      def_delegator :@department, :manager
 
       def initialize(name = '', office_area_code = '', office_number = '', department = Department.new)
         @name             = name
