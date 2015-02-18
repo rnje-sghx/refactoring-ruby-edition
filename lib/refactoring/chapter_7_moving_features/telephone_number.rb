@@ -5,4 +5,8 @@ class Refactoring::Chapter7MovingFeatures::TelephoneNumber
     @area_code = area_code
     @number    = number
   end
+
+  def telephone_number
+    '(' + area_code + ') ' + number
+  end
 end
