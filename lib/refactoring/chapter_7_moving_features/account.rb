@@ -10,7 +10,7 @@ class Refactoring::Chapter7MovingFeatures::Account
 
   def bank_charge
     result = 4.5
-    result += overdraft_charge if @days_overdrawn > 0
+    result += @account_type.overdraft_charge(@days_overdrawn) if @days_overdrawn > 0
     result
   end
 end
