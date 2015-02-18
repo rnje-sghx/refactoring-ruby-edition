@@ -8,10 +8,15 @@ module Refactoring
         @name             = name
         @office_area_code = office_area_code
         @office_number    = office_number
+        @department       = department
       end
 
       def telephone_number
         '(' + @office_area_code + ') ' + @office_number
+      end
+
+      def manager
+        @department.manager
       end
     end
   end
