@@ -1,8 +1,12 @@
 module Refactoring
   module Chapter7MovingFeatures
     class Person
+      extend Forwardable
+
       attr_reader :name
       attr_accessor :office_area_code, :office_number
+
+      def_delegator :@department, :manager
 
       def initialize(name = '', office_area_code = '', office_number = '', department = Department.new)
         @name             = name
@@ -13,10 +17,6 @@ module Refactoring
 
       def telephone_number
         '(' + @office_area_code + ') ' + @office_number
-      end
-
-      def manager
-        @department.manager
       end
     end
   end
