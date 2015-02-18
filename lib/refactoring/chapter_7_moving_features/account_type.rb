@@ -1,4 +1,10 @@
 class Refactoring::Chapter7MovingFeatures::AccountType
+  attr_reader :interest_rate
+  
+  def initialize(interest_rate = 0)
+    @interest_rate = interest_rate
+  end
+
   def premium?
     true
   end
