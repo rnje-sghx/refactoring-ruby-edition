@@ -5,15 +5,7 @@ class Refactoring::Chapter7MovingFeatures::Account
   end
 
   def overdraft_charge
-    if @account_type.premium?
-      result = 10
-      result += (@days_overdrawn - 7) * 0.85 if @days_overdrawn > 7
-      result
-    elsif @account_type.current?
-      @days_overdrawn * 1.82
-    else
-      @days_overdrawn * 1.75
-    end
+    @account_type.overdraft_charge(@days_overdrawn)
   end
 
   def bank_charge
