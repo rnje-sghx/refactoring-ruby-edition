@@ -1,4 +1,8 @@
 class Refactoring::Chapter7MovingFeatures::Account
+  extend Forwardable
+
+  def_delegator :@account_type, :interest_rate, :interest_rate=
+
   def initialize(account_type, days_overdrawn = 0)
     @account_type   = account_type
     @days_overdrawn = days_overdrawn
