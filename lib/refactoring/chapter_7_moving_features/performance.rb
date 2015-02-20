@@ -1,16 +1,16 @@
 module Refactoring
   module Chapter7MovingFeatures
     class Performance
-      def initialize
-        @data = []
+      attr_accessor :name
+      attr_writer :wins
+
+      def initialize(name = '', wins = '0')
+        @name = name
+        @wins = wins
       end
 
-      def []=(index, value)
-        @data.insert(index, value)
-      end
-
-      def [](index)
-        @data[index]
+      def wins
+        @wins.to_i
       end
     end
   end
