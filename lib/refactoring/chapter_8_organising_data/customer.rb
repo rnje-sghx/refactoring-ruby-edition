@@ -1,5 +1,5 @@
 module Refactoring
-  module Chapter7MovingFeatures
+  module Chapter8OrganisingData
     class Customer
       private_class_method :new
 

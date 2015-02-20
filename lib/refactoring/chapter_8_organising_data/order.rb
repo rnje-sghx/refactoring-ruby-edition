@@ -1,5 +1,5 @@
 module Refactoring
-  module Chapter7MovingFeatures
+  module Chapter8OrganisingData
     class Order
       def initialize(customer_name)
         @customer = Customer.with_name(customer_name)
