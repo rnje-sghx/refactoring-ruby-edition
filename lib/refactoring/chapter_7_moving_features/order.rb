@@ -1,10 +1,16 @@
 module Refactoring
   module Chapter7MovingFeatures
     class Order
-      attr_accessor :customer
-
       def initialize(customer)
-        @customer = customer
+        @customer = Customer.new(customer)
+      end
+
+      def customer
+        @customer.name
+      end
+
+      def customer=(name)
+        @customer = Customer.new(name)
       end
     end
   end
