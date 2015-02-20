@@ -1,16 +1,16 @@
 module Refactoring
   module Chapter7MovingFeatures
     class Order
-      def initialize(customer)
-        @customer = Customer.new(customer)
+      def initialize(customer_name)
+        @customer = Customer.new(customer_name)
       end
 
-      def customer
+      def customer_name
         @customer.name
       end
 
-      def customer=(name)
-        @customer = Customer.new(name)
+      def customer=(customer_name)
+        @customer = Customer.new(customer_name)
       end
     end
   end
